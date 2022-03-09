@@ -11,8 +11,8 @@ services:
         ports:
             -   "8099:80"
         volumes:
-            - ./src:/var/www/html
-            - ./nginx/default.conf:/etc/conf.d/default.conf
+            - ../src:/var/www/html
+            - ../nginx/default.conf:/etc/conf.d/default.conf
         depends_on:
             -   app2
             -   mysql
@@ -39,7 +39,7 @@ services:
     app2:
         image: mahmudoni/app2:v1.0
         volumes:
-            -   ./src:/var/www/html
+            -   ../src:/var/www/html
         ports:
             -   "9002:9002"
         networks:
